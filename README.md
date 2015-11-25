@@ -7,15 +7,15 @@
 
 #実装
 
-① ストーリーボードにてモーダルで表示するビューコントローラーのビューを選択し、クリアカラーにする
-② とりあえずViewDidLoad等でジェスチャーをaddする
+① ストーリーボードにてモーダルで表示するビューコントローラーのビューを選択し、クリアカラーにする <dr>
+② とりあえずViewDidLoad等でジェスチャーをaddする <dr>
  
 ```
     UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureAction:)];
     [self.mainView addGestureRecognizer:panGesture];
 ```
 
-③ UIPanGestureRecognizerのメソッドを実装する
+③ UIPanGestureRecognizerのメソッドを実装する <dr>
 
 ```
 - (void)panGestureAction:(UIPanGestureRecognizer *)recognizer {
@@ -50,17 +50,17 @@
 }
 ```
 
-まずtranslationInViewで移動量が取得できるので保持しておく
-if文で「下に下げた場合」「上に上げた場合」「その他」「ドラッグ終了時」を判定し各処理を追加する
-ポイントとしては普通に下にスワイプしても多少は横にずれるのでそれを考慮した以下の判定文
+まずtranslationInViewで移動量が取得できるので保持しておく <dr>
+if文で「下に下げた場合」「上に上げた場合」「その他」「ドラッグ終了時」を判定し各処理を追加する <dr>
+ポイントとしては普通に下にスワイプしても多少は横にずれるのでそれを考慮した以下の判定文 <dr>
 
 ```
 (-movePoint.y < movePoint.x && movePoint.x < movePoint.y)
 ```
-y座標もx座標の幅と同じ分判定に追加することにより多少横にずれても下と判定する
-(すいません。うまく説明できないです)
-
-④ if文で分けた各メソッドを実装する
+y座標もx座標の幅と同じ分判定に追加することにより多少横にずれても下と判定する <dr>
+(すいません。うまく説明できないです) <dr>
+ <dr>
+④ if文で分けた各メソッドを実装する <dr>
 
 ```
 // 元に戻すアニメーションメソッド
@@ -85,9 +85,9 @@ y座標もx座標の幅と同じ分判定に追加することにより多少横
     }];
 }
 ```
-ここのポイントとしては下に下げる時のアニメーション完了時にDismissするくらいでしょうか・・・
+ここのポイントとしては下に下げる時のアニメーション完了時にDismissするくらいでしょうか・・・ <dr>
 
-⑤最後に以下を実装
+⑤最後に以下を実装 <dr>
 
 ```
 - (UIModalPresentationStyle)modalPresentationStyle {
