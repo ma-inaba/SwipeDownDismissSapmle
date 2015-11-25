@@ -96,4 +96,6 @@ y座標もx座標の幅と同じ分判定に追加することにより多少横
 }
 ```
 
-以上
+以下動きです。
+
+[![https://gyazo.com/ba873f22fb6baf011022870cb90b24e3](https://i.gyazo.com/ba873f22fb6baf011022870cb90b24e3.gif)](https://gyazo.com/ba873f22fb6baf011022870cb90b24e3)
